@@ -12,7 +12,13 @@
 @endsection
 
 @section('content')
-    @include('layouts.home.header')
-    @include('layouts.home.main')
-    @include('layouts.home.footer')
+    <header>
+        @include('layouts.home.header')
+    </header>
+    <main>
+        @include('layouts.home.main')
+    </main>
+    <footer class="mt-5">
+        @include('layouts.home.footer')
+    </footer>
 @endsection
