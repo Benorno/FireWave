@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container rounded rounded-bottom-5 shadow">
     <div  class="row py-2 mb-2 rounded rounded-bottom-5" style="background-color: #252525">
         {{--    logo size difference on small devices   --}}
         <div class="col-3 d-block d-sm-none">
@@ -14,7 +14,7 @@
         <div class="col">
             <div class="float-end mt-3">
                 @guest
-                    <a href="{{ route('login') }}" class="text-decoration-none btn btn-outline-danger rounded-pill me-2">Login</a>
+                    <a href="{{ route('login') }}" class="text-decoration-none btn btn-outline-danger rounded-pill me-2">Login <i class="bi bi-door-open"></i></a>
                     <a href="{{ route('register') }}" class="link-secondary">Register</a>
                 @else
                     <a href="{{ route('dashboard') }}" class="text-decoration-none btn btn-outline-danger rounded-pill me-2">Dashboard</a>

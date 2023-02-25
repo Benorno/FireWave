@@ -1,24 +1,24 @@
 @extends('index')
 
-@section('title' , 'Profile')
+@section('title' , 'BeatWave | Profile')
 
 @section('style')
     <style>
         body {
             background-color: #212121;
-            color: white;
         }
     </style>
 @endsection
 
 @section('content')
     <header>
-        @include('layouts.profile.header')
+        @include('layouts.dashboard.header')
     </header>
     <main>
-        @include('layouts.profile.main')
+{{--        @include('layouts.dashboard.main')--}}
     </main>
     <footer>
-        @include('layouts.profile.footer')
+        @include('layouts.dashboard.footer')
     </footer>
 @endsection
+

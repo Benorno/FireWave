@@ -30,7 +30,7 @@
                         <label for="password_confirmation"><b>Confirm Password</b></label>
                         <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
                     </div>
-                    <button type="submit" class="btn btn-dark mt-2 rounded-pill">Sign Up</button>
+                    <button type="submit" class="btn btn-dark mt-2 rounded-pill">Sign Up <i class="bi bi-person-plus"></i></button>
                 </form>
                 <p class="mt-2">Already have an account? <a href="{{ route('login') }}" class="link-dark">Login</a></p>
             </div>
