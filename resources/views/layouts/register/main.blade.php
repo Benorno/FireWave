@@ -1,17 +1,17 @@
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
 <div class="container text-white">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="row">
         <div class="col-lg-6">
             <div class="rounded rounded-5 p-3" style="background-color: #ec1c3b; margin-top: 15rem">
+                <h3 class="text-center">Register</h3>
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
                     <div class="form-group">

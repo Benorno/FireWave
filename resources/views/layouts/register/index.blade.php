@@ -1,6 +1,6 @@
 @extends('index')
 
-@section('title' , 'Register')
+@section('title' , 'FireWave | Register')
 
 @section('style')
     <style>
@@ -14,13 +14,13 @@
         {{--    logo size difference on small devices   --}}
         <div class="col-3 d-block d-sm-none">
             <a href="/"><img
-                    src="https://i.postimg.cc/W3FtMnQ2/beatwave-low-resolution-logo-color-on-transparent-background.png"
-                    alt="beatwave-logo" class="w-100 "></a>
+                    src="https://i.postimg.cc/Fs9cpCn8/logo-no-background.png"
+                    alt="firewave-logo" class="w-100 "></a>
         </div>
         <div class="col-6 d-none d-sm-block ">
             <a href="/"><img
-                    src="https://i.postimg.cc/W3FtMnQ2/beatwave-low-resolution-logo-color-on-transparent-background.png"
-                    alt="beatwave-logo" class="w-25 "></a>
+                    src="https://i.postimg.cc/Fs9cpCn8/logo-no-background.png"
+                    alt="firewave-logo" class="w-50 mt-4"></a>
         </div>
     </div>
 </div>

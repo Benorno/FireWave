@@ -1,35 +1,45 @@
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![FireWave Logo](https://i.postimg.cc/Fs9cpCn8/logo-no-background.png)
 
 
-# What is BeatWave?
+# What is FireWave?
+FireWave is a file uploading website that offers a simple, and efficient way to store files online. Whether you need to store documents, images, videos, or music, FireWave makes it easy to upload files of any type and size.
 
-BeatWave is an online music streaming service that allows you to listen to your favorite songs and discover new music from a vast library of tracks. With BeatWave, you can access millions of songs from various genres, including pop, rock, hip-hop, electronic, and more.
+Our platform is designed to be user-friendly and intuitive, with a focus on simplicity and ease of use. With FireWave, you can upload files quickly and easily.
 
-Using BeatWave is simple and easy. You can create a free account and start browsing the library of tracks right away. The search feature allows you to find specific songs or artists, and you can create custom playlists of your favorite tracks. BeatWave also offers curated playlists and radio stations, which you can browse based on your mood or preferred genre.
-
-With BeatWave's user-friendly interface, you can enjoy uninterrupted streaming of high-quality music without any ads or interruptions. You can also connect with your friends and share your playlists or tracks on social media.
-
-In summary, BeatWave is a comprehensive music streaming service that offers a seamless listening experience, with access to millions of songs from various genres, curated playlists, and radio stations.
+Whether you're an individual or a business looking for a fast way to store sensitive information, FireWave has the tools to meet your needs. With features large file support, and fast file transfer.
 
 
-## Deployment
 
-I was using XAMPP for this project. So pretty basic setup.
+## Screenshots
 
-* Install [XAMPP](https://www.apachefriends.org/)
-* After installation navigate to XAMPP's htdocs folder (C:/xampp/htdocs/)
-* Place BeatWave folder there
-* Go to XAMPP controll panel and make sure Apache and MySQL is running
-* Go to [phpMyAdmin](http://localhost/phpmyadmin/)
-* Create a database named **laravel**
-* Open your IDE's terminal while in **htdocs/BeatWave** or just navigate to **BeatWave** directory using terminal
-* Then run this command in terminal
-```bash
-#this command pushes database tables to laravel database to MySQL
-php artisan migrate
-```
+![App Screenshot](https://i.postimg.cc/wvxjFpfG/screenshot-9.png)
+
+![App Screenshot](https://i.postimg.cc/CMBz2FM3/screenshot-10.png)
+
+![App Screenshot](https://i.postimg.cc/VNZk7hxs/screenshot-11.png)
+
+![App Screenshot](https://i.postimg.cc/yd5WNGjp/screenshot-16.png)
+
+![App Screenshot](https://i.postimg.cc/q7TsJNq6/screenshot-13.png)
+
+![App Screenshot](https://i.postimg.cc/Pxf1D0mt/screenshot-14.png)
+
+![App Screenshot](https://i.postimg.cc/hGcmFNZ9/screenshot-15.png)
+## Brand Board
+
+![App Screenshot](https://i.postimg.cc/rFGY2Rq3/screenshot-18.png)
+
+
+## Tools and websites used to help with this project
+
+**Image Upload Cloud:** [Postimages.org](https://postimages.org/)
+
+**Free Stock Images:** [Freepik.com](https://www.freepik.com/)
+
+**Logo made in:** [Logo.com](https://logo.com/)
 
 ## Authors
 
 - [@Benorno](https://github.com/Benorno)
+

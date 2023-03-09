@@ -1,29 +1,35 @@
-@if ($errors->any())
-    <div class="alert alert-warning">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
 <div class="container">
     <div class="row">
         <div class="col">
             {{--    logo size difference on small devices   --}}
             <div class="col-3 d-block d-sm-none">
                 <a href="/"><img
-                        src="https://i.postimg.cc/Gh5C8QKd/beatwave-low-resolution-logo-black-on-transparent-background.png"
-                        alt="beatwave-logo" class="w-100 "></a>
+                        src="https://i.postimg.cc/SKvLnLSR/logo-no-background-black.png"
+                        alt="firewave-logo" class="w-100 mt-2"></a>
             </div>
             <div class="col-6 d-none d-sm-block ">
                 <a href="/"><img
-                        src="https://i.postimg.cc/Gh5C8QKd/beatwave-low-resolution-logo-black-on-transparent-background.png"
-                        alt="beatwave-logo" class="w-25 "></a>
+                        src="https://i.postimg.cc/SKvLnLSR/logo-no-background-black.png"
+                        alt="firewave-logo" class="w-50 mt-4"></a>
             </div>
         </div>
     </div>
+{{--  Alert messages  --}}
+    @if ($errors->any())
+        <div class="alert alert-warning">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show">
+            {{ session('success') }}
+        </div>
+    @endif
+{{--------}}
     <div class="row">
         <div class="col-6 text-white rounded rounded-5 p-3" style="background-color: #212121; margin-top: 10rem">
             <h3 class="text-center">Login</h3>

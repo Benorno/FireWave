@@ -1,6 +1,6 @@
 @extends('index')
 
-@section('title' , 'Home')
+@section('title' , 'FireWave | Home')
 
 @section('style')
     <style>

@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="row py-4 rounded rounded-top-5" style="background-color: #252525">
+    <div class="row py-4 rounded rounded-top-5 shadow" style="background-color: #252525">
         <div class="col">
             <ul>
-                <li><a href="/about" class="link-danger">About Us</a></li>
-                <li><a href="/contact" class="link-danger">Contact Us</a></li>
+                <li><a href="{{ route('about') }}" class="link-danger">About Us</a></li>
+                <li><a href="{{ route('contacts') }}" class="link-danger">Contact Us</a></li>
             </ul>
         </div>
         <div class="col">
