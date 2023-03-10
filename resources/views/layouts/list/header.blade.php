@@ -4,8 +4,8 @@
             <img src="https://i.postimg.cc/jdLy9xfN/firewave-website-favicon-white.png" alt="small-logo" class="w-auto"
                  style="scale: 0.8">
         </div>
-        {{--    searchbar    --}}
-        <div class="col">
+        {{--    searchbar   --}}
+        <div class="col d-none d-sm-block">
             <div class="mt-5">
                 <form action="{{ route('files.search') }}" method="GET">
                     <div class="input-group">
@@ -16,7 +16,6 @@
                 </form>
             </div>
         </div>
-        {{--    User logo dropdown    --}}
         <div class="col">
             <div class="dropdown float-end pt-5 me-3">
                 <a class="btn btn-outline-danger rounded rounded-pill" href="{{ route('upload') }}"><i class="bi bi-upload"></i></a>

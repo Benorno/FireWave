@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUndefinedFieldInspection */
 
 namespace App\Http\Controllers;
 
@@ -12,7 +12,7 @@ class FileUploadController extends Controller
     {
         $file = $request->file('file');
         $filename = $file->getClientOriginalName();
-        $path = $file->store('public/files');
+        $path = $file->storeAs('public/files', $filename);
         $file = new File();
         $file->name = $filename;
         $file->path = $path;

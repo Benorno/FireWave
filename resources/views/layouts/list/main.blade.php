@@ -1,15 +1,32 @@
 <div class="container">
+    <div class="row">
+        {{--    searchbar for small devices   --}}
+        <div class="col d-block d-sm-none">
+            <div class="mt-5">
+                <form action="{{ route('files.search') }}" method="GET">
+                    <div class="input-group">
+                        <input type="text" class="form-control rounded rounded-pill" placeholder="Search..." name="q" value="{{ $searchQuery ?? '' }}">
+                        <button class="btn btn-outline-danger rounded rounded-pill ms-2" type="submit"><i class="bi bi-search"></i></button>
+                        <a href="{{ route('files') }}" class="btn btn-danger rounded rounded-pill ms-2"><i class="bi bi-x-octagon"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{{--  alert messages  --}}
     @if(isset($success))
         <div class="alert alert-success alert-dismissible " role="alert">
             {{ $message }}
         </div>
     @endif
-        @if(count($files) === 0)
-            <div class="alert alert-info" role="alert">
-                No files found. <a href="{{ route('files') }}" class="alert-link">Go Back</a>.
-                <button class="btn-close float-end" type="button" aria-label="Close" data-bs-dismiss="alert"></button>
-            </div>
-        @endif
+
+    @if(count($files) === 0)
+        <div class="alert alert-info" role="alert">
+            No files found. <a href="{{ route('files') }}" class="alert-link">Go Back</a>.
+            <button class="btn-close float-end" type="button" aria-label="Close" data-bs-dismiss="alert"></button>
+        </div>
+    @endif
+{{-- alert messages end   --}}
     <div class="row">
         <div class="col">
             <h1 class="text-center my-4 text-danger">My Files</h1>
