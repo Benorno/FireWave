@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\UserController;
@@ -26,7 +25,7 @@ Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
-
+// Public Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', function () {
     return view('layouts.about');
@@ -34,6 +33,8 @@ Route::get('/about', function () {
 Route::get('/contacts', function () {
     return view('layouts.contacts');
 })->name('contacts');
+
+// Protected Routes
 Route::middleware(['auth'])->group(function () {
     Route::get('/upload', function () {
         return view('layouts.upload.index');

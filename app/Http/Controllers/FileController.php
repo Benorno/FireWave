@@ -11,12 +11,12 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Illuminate\Support\Facades\Storage;
 
-
 class FileController extends Controller
 {
     /**
      * @return Application|Factory|View
      */
+    //list all files
     public function listFiles(): View|Factory|Application
     {
         $user = auth()->user();
@@ -28,19 +28,20 @@ class FileController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
+    //stores file in storage
     public function store(Request $request): RedirectResponse
     {
-        $validated = $request->validate([
-            'file' => 'required|mimes:jpg,jpeg,png,pdf,doc,docx|max:2048',
-        ]);
+        //store file in storage
+        $path = $request->file('file')->store('public/files');
 
-        $path = $validated['file']->store('uploads');
-
+        //store file in database
         $file = new File([
-            'name' => $validated['file']->getClientOriginalName(),
+            'name' => encrypt($request->file('file')->getClientOriginalName()),
             'path' => $path,
+            'size' => $request->file('file')->getSize(),
         ]);
 
+        //associate file with user
         $user = auth()->user();
         $user->files()->save($file);
 
@@ -51,27 +52,43 @@ class FileController extends Controller
      * @param $id
      * @return BinaryFileResponse
      */
+    //downloads file
     public function download($id): BinaryFileResponse
     {
+        //get file from database
         $file = File::find($id);
-        $path = Storage::disk('public')->path($file->path);
-        $originalName = decrypt($file->name);
 
-        return response()->download($path, $originalName);
+        //get file from storage
+        $path = Storage::disk('public')->path($file->path);
+
+        return response()->download($path);
     }
 
+    //deletes file
     public function delete($id): RedirectResponse
     {
+        //get file from database
         $file = File::findOrFail($id);
+
+        //delete file from storage
         Storage::disk('public')->delete($file->path);
+
+        //delete file from database
         $file->delete();
+
         return redirect('files')->with('success', 'File deleted successfully.');
     }
 
+    //searches for files
     public function search(Request $request): Factory|View|Application
     {
+        //get user
         $user = auth()->user();
+
+        //get search query
         $searchQuery = $request->input('q');
+
+        //search for files
         $files = $user->files()
             ->where('name', 'like', '%'.$searchQuery.'%')
             ->latest()
@@ -79,7 +96,5 @@ class FileController extends Controller
 
         return view('layouts.list.index', compact('files', 'searchQuery'));
     }
-
-
 
 }

@@ -35,6 +35,7 @@
                 <thead>
                 <tr>
                     <th scope="col">Name</th>
+                    <th scope="col">Size</th>
                     <th scope="col">Uploaded</th>
                     <th scope="col">Actions</th>
                 </tr>
@@ -43,6 +44,7 @@
                 @foreach ($files as $file)
                     <tr>
                         <td>{{ $file->name }}</td>
+                        <td>{{ $file->getSizeFormatted() }}</td>
                         <td>{{ $file->created_at->format('M d, Y') }}</td>
                         <td>
                             <a href="{{ route('download', ['id' => $file->id]) }}" class="btn btn-sm btn-success rounded rounded-pill"><i class="bi bi-download"></i></a>
